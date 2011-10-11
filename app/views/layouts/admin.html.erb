@@ -7,7 +7,9 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-    <div id="content">
+  <%= render 'shared/info-bar' %>
+  <%= render 'shared/admin-menu' %>
+  <div id="content">
     <%= yield %>
   </div>
   <%= render 'shared/admin-footer' %>
