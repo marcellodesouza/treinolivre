@@ -15,15 +15,10 @@
     <%= f.text_field :email, :placeholder => "Nome do Usuário", :size => 50 %>
   </div>
 
-  <% if can? :manage, :all %>  
-    <div class="field">
+     <div class="field">
       <%= f.select :company_id, Company.find(:all).collect { |item| [item.name, item.id] } %>
     </div>
-  <% else %>
-    <div class="field">
-      <%= f.hidden_field :company_id, :value => current_user.company.id %>
-    </div>
-  <% end %>
+ 
 
   <% #if @current_method == "new" %>
     <div class="field">
