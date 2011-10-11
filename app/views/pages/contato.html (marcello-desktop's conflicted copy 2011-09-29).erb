@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "public" %>
+ <div id="fundo-menu">
+    <div id="menu">
+      <ul>
+        <li>
+          <%= link_to root_path do %>
+            Home
+          <% end %>
+        </li>
+	<li><a href="metodo.html">O Método</a></li>
+	<li class="destacar">Contato</li>
+	<li>
+          <%= link_to user_session_path do %>
+            Estudar
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div id="sombra">
+    </div>
+<div id="destaque-contato">
+</div>
+</div>
+<div id="container-contato">
+  <h1>Fale Conosoco</h1> 
+    <form action="action" method="post" name="contato" id="contato"> 
+      <label for="nome">Nome: </label><br /> 
+      <input type="text" name="nome" id="nome" size="50" /><br /> 
+      <label for="email">E-mail: </label><br />  
+      <input type="text" name="email" id="email" size="50" /><br /> 
+      <label for="telefone">Telefone com DDD: </label><br />  
+      <input type="text" name="telefone" id="telefone" size="50" /><br /> 
+      <label for="assunto">Assunto: </label><br />  
+      <input type="text" name="assunto" id="assunto" size="50" /><br /> 
+      <label for="mensagem">Mensagem: </label><br /> 
+      <textarea name="mensagem" rows="10" cols="55"></textarea><br /> 
+      <input type="submit" name="enviar" value="Enviar" id="enviar"/> 
+      <input type="reset" name="cancelar" value="Cancelar" id="cancelar"/> 
+    </form> 
+</div>

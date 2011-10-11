@@ -1,0 +1,15 @@
+<%= form_for([course, lesson]) do |f| %>
+  
+  <div class="field">
+    <%= f.text_field :theme, :placeholder => "Tema da Lição", :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :objective, :placeholder => "Descrição da Lição" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

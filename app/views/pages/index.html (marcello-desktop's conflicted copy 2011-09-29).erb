@@ -1,0 +1,74 @@
+<%= stylesheet_link_tag "public" %>
+    <div id="fundo-menu">
+    <div id="menu">
+      <ul>
+        <li class="destacar">Home</a></li>
+	<li><a href="metodo.html">O Método</a></li>
+	<li>
+          <%= link_to contato_path do %>
+            Contato 
+          <% end %>
+        </li>
+	<li>
+          <%= link_to user_session_path do %>
+            Estudar
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div id="sombra">
+    </div>
+
+   <div id="destaque-home">
+    </div>
+  </div>
+  <div id="container">
+    <div id="example">
+      <%= image_tag("new-ribbon-novo.png", :size => "112x112", :id => "ribbon") %>
+      <div id="slides">
+        <div class="slides_container">
+	  <a href="#"><%= image_tag "slide.png" %></a>
+	  <a href="#"><%= image_tag "slide-1.png" %></a>
+	  <a href="#"><%= image_tag "slide-2.png" %></a>
+	</div>
+      </div>
+    </div>
+  </div>
+  <div id="info">
+    <h2>Treinamentos em Software Livre Disponíveis</h2>
+    <div id="ubuntu">
+    <h3>Sistema Operacional<br /><span class="obs_info">Ubuntu 11.04</span></h3>
+      <%= image_tag "logo-ubuntu-peq.png" %><br />
+      <p span class="texto_info">
+        O Ubuntu hoje é o terceiro Sistema Operacional mais instalado no mundo. Sua facilidade de instalação e operação fez com que sistemas operacionais baseados em Linux se tornassem mais fáceis e simples de usar.<br /><br />
+        Com seus repositórios de software ricos e atualizados o Ubuntu é capaz de atender desde de o usuário comum que usa o computador para lazer e tarefas do dia-a-dia até os mais profissionais que o utilizam para os diversos fins.
+      </p>
+      <%= link_to contato_path do %>
+        <span class="link_saber">Quero saber mais</span>
+      <% end %>
+    </div>
+    <div id="grafico" class="border_info">
+    <h3>Design Gráfico<br /><span class="obs_info">Gimp/Inkscape</span></h3>
+      <%= image_tag "gimp-ink-logo-peq.png" %><br />
+      <p span class="texto_info">
+        Em se tratando de design gráfico e digital o Ubuntu tem em seus repositórios duas renomadas ferramentas: Gimp e Inkscape.<br /><br />O Gimp é um editor de fotos profissional leve e funcional, características que o tornam cada vez mais popular.<br /><br />O Inkscape é um editor de gráficos vetoriais capaz de atender com o mesmo poder e simplicidade o mundo do designer gráfico e o do designer digital.
+      </p>
+      <%= link_to contato_path do %>
+        <span class="link_saber">Quero saber mais</span>
+      <% end %>
+    </div>
+    <div id="office">
+    <h3>Pacote de Escritório<br /><span class="obs_info">Libre Office</span></h3>
+      <%= image_tag "libre-office-peq.png" %><br />
+      <p span class="texto_info">
+        A suíte de escritório Libre Office provê um completo conjunto de soluções para a criação e edição de documentos sejam,textos, planilhas ou apresentações.<br /><br />
+        O Libre Office é capaz de ler e salvar documentos no formato do Office da Microsoft e sua extensão padrão é a ODF, padrão internacional de troca de documentos.<br /><br />
+        O projeto do qual o Libre Office é derivado o Open Office foi o primeiro pacote de programas de escritório a receber uma certificação ISO no uso do padrão ODF.
+      </p>
+      <%= link_to contato_path do %>
+        <span class="link_saber">Quero saber mais</span>
+      <% end %>
+    </div>
+  </div>
+  </div>
+

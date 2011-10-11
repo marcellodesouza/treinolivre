@@ -1,0 +1,20 @@
+<h1 class="title-config"><%= t ".title" %>
+
+  <% if can? :manage, :all %>
+     / <%= link_to t('.new'), new_course_path %>
+  <% end %>
+
+</h1>
+
+<% @courses.each do |course| %>
+  <%= div_for(course, :class => "list-courses") do %>
+    <%= link_to image_tag(course.avatar.url), course %><br />
+    <% if can? :manage, :all %>
+      <%= link_to t(:edit), edit_course_path(course) %>
+      <%= link_to t(:destroy), course, :confirm => t(:confirm), :method => :delete %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br />
+

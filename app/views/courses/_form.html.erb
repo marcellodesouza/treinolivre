@@ -1,0 +1,33 @@
+<%= form_for(@course, :html => { :multipart => true }) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Nome", :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :description, :placeholder => "Descrição", :cols => 50, :rows => 20 %>
+  </div>
+
+  <div class="field">
+    <%= f.select :category_id, Category.find(:all).collect { |item| [item.name, item.id] } %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

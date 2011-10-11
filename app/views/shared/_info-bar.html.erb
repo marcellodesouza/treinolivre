@@ -1,0 +1,20 @@
+  <div id="info_bar">
+    <div id="info_user">
+      <div id="logo-company">
+        <%= image_tag "logo-admin.png" %>
+      </div>
+      <div id="user_image">
+        <%= image_tag avatar_url(current_user) %>
+      </div>
+      <div id="user_info">
+        <% if user_signed_in? %>
+          <p>Olá, <%= current_user.email %><br />
+          Seu último acesso foi em:<%= current_user.last_sign_in_at.strftime("%d/%m/%y") %></p>
+        <% end %>
+      </div>
+      <div id="user_menu">
+        <%= render 'shared/login_items' %></p>
+      </div>
+    </div>
+  </div>
+  

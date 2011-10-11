@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treinolivre</title>
+  <%= stylesheet_link_tag "scaffold.css" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <style type="text/css">
+    body{
+        background: url(../images/fundo-logo.png) repeat-x;
+    }
+    #container {
+      width: 800px;
+      height: 310px;
+      margin: 0 auto;
+      border: 5px solid #214478;
+      /*border-right-color: #999;
+      border-bottom-color: #999;*/
+      background-color: #fff;
+      background: url(../images/logo-login.png) no-repeat;
+      background-position: right;
+    }
+    h2{
+      font-size: 30px;
+      color: #214478;
+      margin-left: 100px;
+      margin-bottom: 30px;
+      margin-top: 15px;
+    }
+    form{
+      width: 500px;
+      height: 210px;
+      margin: 0 auto;
+    }
+    label{
+      font-size: 20px;
+      margin: 8px;
+      padding-bottom: 5px;
+    }
+    .label_check{
+      font-size: 15px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    .input_check{
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    .input_text{
+      height: 25px;
+      width: 380px;
+      margin: 5px;
+      border: 1px solid #999;
+      font-size: 17px;
+      padding: 5px;
+    }
+    .button{
+      width: 80px;
+      height: 30px;
+      font-weight: bold;
+      padding: 5px;
+    }
+    a{
+      margin-left: 100px;
+    }
+    #logo{
+      background: url(../images/logo-treino-livre-peq.png) no-repeat;
+      background-position: center;
+      margin-top: 150px;
+      height: 130px;
+      width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="logo">
+  </div>
+  <div id="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

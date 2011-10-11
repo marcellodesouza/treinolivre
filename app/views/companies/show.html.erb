@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="logo-show">
+
+</div>
+
+<div class="name-show">
+  <h1><%= @company.name %></h1><br />
+  <%= link_to t(:edit), edit_company_path(@company) %> |
+  <%= link_to t(:back), companies_path %>
+</div>
+
+<div class="content-show">
+  <table>
+    <tr>
+      <td class="td-title-company">Contractor</td><td><%= @company.contractor %></td>
+    </tr>
+      <td class="td-title-company">Address</td><td><%= @company.address %></td>
+    </tr>
+      <td class="td-title-company">City</td><td><%= @company.city %></td>
+    </tr>
+      <td class="td-title-company">State</td><td><%= @company.state %></td>
+    </tr>
+      <td class="td-title-company">Zipcode</td><td><%= @company.zipcode %></td>
+    </tr>
+      <td class="td-title-company">Cnpj</td><td><%= @company.cnpj %></td>
+    </tr>
+      <td class="td-title-company">Phone</td><td><%= @company.phone %></td>
+    </tr>
+      <td class="td-title-company">Cellphone</td><td><%= @company.cellphone %></td>
+    </tr>
+  </table>
+</div>
+
+

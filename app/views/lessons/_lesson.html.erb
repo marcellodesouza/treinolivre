@@ -1,0 +1,8 @@
+ <li>
+    <%= link_to lesson.theme, course_lesson_path(@course, lesson) %>  
+    <% if can? :manage, :all %>
+      | <%= link_to t(:edit), edit_course_lesson_path(@course, lesson) %>
+      <%= link_to t(:destroy), [lesson.course, lesson], :confirm => t(:confirm), :method => :delete %>
+    <% end %>
+  </li>
+

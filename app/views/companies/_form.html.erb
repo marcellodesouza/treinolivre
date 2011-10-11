@@ -1,0 +1,44 @@
+<%= form_for(@company) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Nome da Empresa", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :address, :placeholder => "Endereço Completo", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :city, :placeholder => "Cidade", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :state, :placeholder => "Estado", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :zipcode, :placeholder => "CEP", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :cnpj, :placeholder => "CNPJ", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :contractor, :placeholder => "Contratante", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :phone, :placeholder => "Telefone Fixo", :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.text_field :cellphone, :placeholder => "Telefone Celular", :size => 50 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

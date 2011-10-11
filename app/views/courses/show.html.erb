@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="logo-show">
+  <%= image_tag @course.avatar.url(:small) %>
+</div>
+
+<div class="name-show">
+  <h1 class="title-page"><%= @course.name %></h1>
+  <p><%= @course.category.name %></p>
+  <%= link_to t(:back), courses_path %>
+</div>
+
+<div id="description-course">
+  <p>
+    <%= @course.description %>
+  </p>
+</div>
+
+<div class="list-lesson">
+  <ol>
+    <%= render @course.lessons %>
+  </ol>
+</div>
+
+<% if can? :manage, :all %>
+  <%= render "lessons/form", :course => @course, :lesson => Lesson.new %>
+<% end %>
+

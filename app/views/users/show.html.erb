@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="logo-show">
+  <%= image_tag avatar_url(current_user) %>
+</div>
+
+<div class="name-show">
+  <h1><%= @user.email %></h1><br />
+
+  <p><%= @user.company.name %></p><br /><br />
+
+  <% if cannot? :manage, :all %>
+    <%= link_to t(:edit), edit_user_path(@user) %> |
+    <%= link_to t(:back), courses_path %>
+  <% else %>
+    <%= link_to t(:edit), edit_user_path(@user) %> |
+    <%= link_to t(:back), users_path %>
+  <% end %>
+</div>

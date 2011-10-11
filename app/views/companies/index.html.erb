@@ -1,0 +1,21 @@
+<h1 class="title-config"><%=t ".title" %> / <%= link_to t('.new'), new_company_path %></h1>
+
+<table>
+  <tr>
+    <th colspan="2"></th>
+  </tr>
+
+<% @companies.each do |company| %>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td><%= link_to company.name, company %></td>
+    <td><%= company.state %></td>
+    <td><%= company.contractor %></td>
+    <td><%= company.phone %></td>
+    <td><%= link_to t(:edit), edit_company_path(company) %></td>
+    <td><%= link_to t(:destroy), company, :confirm => t(:confirm), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

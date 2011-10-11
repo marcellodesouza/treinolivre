@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treinolivre</title>
+  <%= stylesheet_link_tag "scaffold.css" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <%= render 'shared/info-bar' %>
+  <%= render 'shared/admin-menu' %>
+  <div id="content">
+    <%= yield %>
+  </div>
+  <%= render 'shared/admin-footer' %>
+</body>
+</html>

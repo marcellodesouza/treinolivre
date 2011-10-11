@@ -1,0 +1,58 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  confirm: Are you sure?
+  edit: Edit
+  destroy: Destroy
+  back: Back
+  show: Show
+  courses:
+      new:
+        title: New Course 
+      edit:
+        title: Editing Course 
+      index:
+        title: Listing Course 
+        new: Create New Course 
+  categories:
+      new:
+        title: New Category 
+      edit:
+        title: Editing Category 
+      index:
+        title: Listing Categories 
+        new: Create New Category
+  users:
+      new:
+        title: New User 
+      edit:
+        title: Editing User 
+      index:
+        title: Listing Users 
+        new: Create New User 
+  companies:
+      new:
+        title: New Company 
+      edit:
+        title: Editing Company 
+      index:
+        title: Listing Companies 
+        new: Create New Company 
+  roles:
+      new:
+        title: New Role 
+      edit:
+        title: Editing Role 
+      index:
+        title: Listing Roles 
+        new: Create New Role 
+  lessons:
+      new:
+        title: New Lesson 
+      edit:
+        title: Editing Lesson 
+      index:
+        title: Listing Lessons 
+        new: Create New Lesson 

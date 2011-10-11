@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="logo-show">
+  <%= link_to image_tag(@course.avatar.url), @course %>
+</div>
+
+<div class="name-show">
+  <h1><%= @lesson.theme %></h1><br />
+  <%= link_to t(:back), course_path(@course) %>
+</div>
+
+<div class="content-show">
+  <p>
+    <%= @lesson.objective %>
+  </p>
+</div>
+
+<%= render @lesson.activities %>
+
+<%= render "activities/form", :lesson => @lesson, :activity => Activity.new %>

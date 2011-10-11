@@ -1,0 +1,10 @@
+production:
+  adapter: mysql2
+  enconding: utf8
+  reconnect: false 
+  database: treinolivre_production
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+

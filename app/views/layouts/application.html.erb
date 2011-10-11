@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treinolivre</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+  <%= javascript_include_tag "vendor/slides.min.jquery.js" %>
+  <%= csrf_meta_tag %>
+  <script>
+    $(function(){
+      $('#slides').slides({
+        /*preload: true,*/
+	/*preloadImage: 'images/loading.gif', */
+	play: 5000,
+	pause: 2500,
+	hoverPause: true
+      });
+    });
+  </script>
+</head>
+<body>
+<div id="cabecalho">
+  <div id="logo">
+    <%= image_tag "logo-novo.png" %>
+  </div>
+<%= yield %>
+<div id="rodape">
+    <div id="conteudo-rodape">
+      <%= image_tag "ovo.png" %>
+      <ul>
+        <li>
+          <%= link_to root_path do %> 
+            Home
+          <% end %>
+        </li> | 
+        <li>
+          <%= link_to metodo_path do %> 
+            Metodo 
+          <% end %>
+        </li> | 
+        <li>
+          <%= link_to contato_path do %> 
+            Contato 
+          <% end %>
+        </li> |
+        <li>
+          <%= link_to user_session_path do %> 
+            Estudar 
+          <% end %>
+        </li>
+      </ul>
+      <p>atendimento@treinolivre.com</p>
+    </div>
+  </div>
+
+</body>
+</html>

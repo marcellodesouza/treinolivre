@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag "public" %>
+ <div id="fundo-menu">
+    <div id="menu">
+      <ul>
+        <li>
+          <%= link_to root_path do %>
+            Home
+          <% end %>
+        </li>
+	<li class="destacar">Método </li>
+	<li>
+          <%= link_to contato_path do %>
+            Contato
+          <% end %>
+        </li>
+	<li>
+          <%= link_to user_session_path do %>
+            Estudar
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div id="sombra">
+    </div>
+<div id="destaque-metodo">
+</div>
+</div>
+<div id="container-metodo">
+  <h1>Como Funciona!</h1>
+  <p>
+    Nosso método se baseia em um fato, <em>o processo de aprendizagem é contínuo e não linear</em>.<br /><br />
+    Com ênfase nessa premissa criamos uma ambiente onde você escolhe o que e o quanto deseja aprender.<br /><br />
+    O processo de formação é livre, definido conforme sua necessidade.<br /><br />
+    Em nosso Ambiente de Estudos você vai encontrar:<br /><br />
+    <table>
+      <tr>
+        <td><%= image_tag "aula.png" %></td><td>Aulas Interativas</td>
+      </tr>
+      <tr>
+        <td><%= image_tag "slides.png" %></td><td>Slides das Aulas</td>
+      </tr>
+      <tr>
+        <td><%= image_tag "file.png" %></td><td>Resumos em PDF</td>
+      </tr>
+      <tr>
+        <td><%= image_tag "link.png" %></td><td>Links Recomendades</td>
+      </tr>
+      <tr>
+        <td><%= image_tag "exercice.png" %></td><td>Arquivos de Exercícios</td>
+      </tr>
+    </table>
+  </p>
+  <p>
+    Você ainda pode colobarar deixando comentários e sugestões em cada aula, fazendo isso você nos dá a oportunidade de aprimorar o ambiente de estudos e as aulas.<br />
+  </p>
+</div>

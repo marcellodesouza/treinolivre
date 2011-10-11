@@ -1,0 +1,55 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :email, :placeholder => "Nome do Usuário", :size => 50 %>
+  </div>
+
+  <% if can? :manage, :all %>  
+    <div class="field">
+      <%= f.select :company_id, Company.find(:all).collect { |item| [item.name, item.id] } %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.hidden_field :company_id, :value => current_user.company.id %>
+    </div>
+  <% end %>
+
+  <% #if @current_method == "new" %>
+    <div class="field">
+      <%= f.password_field :password, :placeholder => "Digite sua Senha", :size => 50 %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, :placeholder => "Confirme sua Senha", :size => 50 %>
+    </div>
+  <% #end %>
+
+  <% if can? :manage, :all %>
+    <% for role in Role.find(:all) %>
+      <div>
+        <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+        <%= role.name %>
+      </div>
+    <% end %>
+  <% else %>
+    <div>
+      <% role = Role.find(2) %>
+      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role), :checked => true %>
+      <%= role.name %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
