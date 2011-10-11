@@ -29,21 +29,13 @@
     </div>
   <% #end %>
 
-  <% if can? :manage, :all %>
     <% for role in Role.find(:all) %>
       <div>
         <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
         <%= role.name %>
       </div>
     <% end %>
-  <% else %>
-    <div>
-      <% role = Role.find(2) %>
-      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role), :checked => true %>
-      <%= role.name %>
-    </div>
-  <% end %>
-
+    
   <div class="actions">
     <%= f.submit %>
   </div>
