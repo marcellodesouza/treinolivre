@@ -17,13 +17,18 @@ class Ability
       can :read, Course
       can :read, Activity
       can :read, Lesson
+      can :update, Company, :id => user.company_id
+      can :read, Company, :id => user.company_id
       #can :read, User, :id => user.id
       #can :create, User
       #can :manage, User, :id => user.id
+      cannot :destroy, Company 
       can :manage, User, :company_id => user.company_id
+      cannot :destroy, User, :id => user.id
     end
     if user.role? :Orientador
       can :create, User
+      can :read, Course
     end
     # Define abilities for the passed in user here. For example:
     #

@@ -1,4 +1,8 @@
-<h1 class="title-config"><%=t ".title" %> / <%= link_to t('.new'), new_company_path %></h1>
+<h1 class="title-config"><%=t ".title" %>
+  <% if can? :manage, :all %>
+    / <%= link_to t('.new'), new_company_path %>
+  <% end %>
+</h1>
 
 <table>
   <tr>
@@ -12,7 +16,9 @@
     <td><%= company.contractor %></td>
     <td><%= company.phone %></td>
     <td><%= link_to t(:edit), edit_company_path(company) %></td>
-    <td><%= link_to t(:destroy), company, :confirm => t(:confirm), :method => :delete %></td>
+    <% if can? :manage, :all %>
+      <td><%= link_to t(:destroy), company, :confirm => t(:confirm), :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
