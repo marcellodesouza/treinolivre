@@ -40,11 +40,16 @@
         <%= role.name %>
       </div>
     <% end %>
-  <% else %>
+  <% end %>
+  <% if current_user.role? :Gestor %>
     <div>
-      <% role = Role.find(2) %>
-      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role), :checked => true %>
-      <%= role.name %>
+      <%= check_box_tag "user[role_ids][]", "2" %>Aluno<br />
+      <%= check_box_tag "user[role_ids][]", "4" %>Orientador
+    </div>
+  <% end %>
+  <% if current_user.role? :Orientador %>
+    <div>
+      <%= check_box_tag "user[role_ids][]", "2", true %> Aluno<br />
     </div>
   <% end %>
     

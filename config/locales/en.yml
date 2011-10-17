@@ -56,3 +56,11 @@ en:
       index:
         title: Listing Lessons 
         new: Create New Lesson 
+  activities:
+      new:
+        title: New Activity 
+      edit:
+        title: Editing Activity 
+      index:
+        title: Listing Activities 
+        new: Create New Activity 

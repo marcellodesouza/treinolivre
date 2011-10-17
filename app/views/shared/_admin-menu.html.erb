@@ -1,13 +1,21 @@
    <% if can? :manage, :all %>
-   <div id="menu_bar">
-    <div id="admin_menu">
-      <%= link_to "Usuários", User %> |
-      <%= link_to "Categorias", Category %> |
-      <%= link_to "Cursos", Course %> |
-      <%= link_to "Empresas", Company %> | 
-      <%= link_to "Permissões", Role %> |
-      <%= link_to "Mídias", Kind %> | 
-      <%= link_to "Anotações", Note %>  
+    <div id="menu_bar">
+      <div id="admin_menu">
+        <%= link_to "Usuários", User %> |
+        <%= link_to "Categorias", Category %> |
+        <%= link_to "Cursos", Course %> |
+        <%= link_to "Empresas", Company %> | 
+        <%= link_to "Permissões", Role %> |
+        <%= link_to "Mídias", Kind %> | 
+        <%= link_to "Anotações", Note %>  
+      </div>
     </div>
-   </div>
-  <% end %>
+   <% end %>
+   <% if current_user.role? :Gestor %>
+    <div id="menu_bar">
+      <div id="admin_menu">
+        <%= link_to "Usuários", User %> |
+        <%= link_to "Empresas", Company %> | 
+      </div>
+    </div>
+   <% end %>

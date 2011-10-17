@@ -1,8 +1,8 @@
- <li>
-    <%= link_to lesson.theme, course_lesson_path(@course, lesson) %>  
+ <tr class="<%= cycle("even", "odd") %>">
+    <td><%= link_to lesson.theme, course_lesson_path(@course, lesson) %></td>
     <% if can? :manage, :all %>
-      | <%= link_to t(:edit), edit_course_lesson_path(@course, lesson) %>
-      <%= link_to t(:destroy), [lesson.course, lesson], :confirm => t(:confirm), :method => :delete %>
+      <td><%= link_to t(:edit), edit_course_lesson_path(@course, lesson) %></td>
+      <td><%= link_to t(:destroy), [lesson.course, lesson], :confirm => t(:confirm), :method => :delete %></td>
     <% end %>
-  </li>
+  </tr>
 

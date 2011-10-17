@@ -1,12 +1,13 @@
 *{
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   14px;
+  font-size:   15px;
   line-height: 18px;
 }
 
@@ -233,7 +234,7 @@ form{
 table{
   margin: 35px 0 15px 80px;
   border: 0;
-  width: 700px;
+  width: 800px;
 }
 
 td{

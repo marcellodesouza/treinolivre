@@ -15,9 +15,12 @@ class Ability
     end
     if user.role? :Gestor
       can :read, Course
+      can :read, Activity
+      can :read, Lesson
       #can :read, User, :id => user.id
       #can :create, User
-      can :manage, User, :id => user.id
+      #can :manage, User, :id => user.id
+      can :manage, User, :company_id => user.company_id
     end
     if user.role? :Orientador
       can :create, User

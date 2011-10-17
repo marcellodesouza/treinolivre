@@ -13,16 +13,17 @@
 <div id="description-course">
   <p>
     <%= @course.description %>
-  </p>
+  </p><br />
 </div>
 
-<div class="list-lesson">
-  <ol>
+<h2>Lições Disponíveis</h2>
+
+<table>
     <%= render @course.lessons %>
-  </ol>
-</div>
+</table><br />
 
 <% if can? :manage, :all %>
+  <h2>Cadastrar uma Nova Lição</h2><br />
   <%= render "lessons/form", :course => @course, :lesson => Lesson.new %>
 <% end %>
 

@@ -7,12 +7,12 @@
     <th colspan="2"></th>
   </tr>
 
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
     <tr class="<%= cycle("even", "odd") %>">
       <td><%= link_to user.email, user %></td>
       <td>
         <% for role in user.roles %>
-          <%= role.name %>
+          <%= role .name %>
         <% end %>
       </td>
       <td><%= user.company.name %></td>
@@ -23,3 +23,4 @@
 </table>
 
 <br />
+

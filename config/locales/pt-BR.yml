@@ -54,6 +54,14 @@
       index:
         title: Lista de Lições 
         new: Criar Nova Lição 
+  activities:
+      new:
+        title: Criar Nova Atividade 
+      edit:
+        title: Editar Atividade 
+      index:
+        title: Lista de Atividades 
+        new: Criar Nova Atividade 
   # formatos de data e hora
   date:
     formats:

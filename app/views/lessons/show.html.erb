@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="logo-show">
-  <%= link_to image_tag(@course.avatar.url), @course %>
+  <%= image_tag @course.avatar.url(:small) %>
 </div>
 
 <div class="name-show">
@@ -12,9 +12,14 @@
 <div class="content-show">
   <p>
     <%= @lesson.objective %>
-  </p>
+  </p><br />
 </div>
 
-<%= render @lesson.activities %>
-
-<%= render "activities/form", :lesson => @lesson, :activity => Activity.new %>
+<h2>Atividades Disponíveis</h2>
+<table>
+  <%= render @lesson.activities %>
+</table>
+<% if can? :manage, :all %>
+  <h2>Cadastrar uma Nova Atividade</h2><br />
+  <%= render "activities/form", :lesson => @lesson, :activity => Activity.new %>
+<% end %>

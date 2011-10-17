@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.xml
   before_filter :load_lesson
-  layout "admin"
+  layout "classes", :except => [:edit]
   def index
     @activities = Activity.all
 
@@ -37,6 +37,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1/edit
   def edit
     @activity = @lesson.activities.find(params[:id])
+    render :layout => "admin"
   end
 
   # POST /activities
@@ -62,7 +63,7 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
-        format.html { redirect_to(@activity, :notice => 'Activity was successfully updated.') }
+        format.html { redirect_to([@lesson.course, @lesson], :notice => 'Activity was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
