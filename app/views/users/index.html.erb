@@ -1,4 +1,4 @@
-<h1 class="title-config"><%=t ".title" %> / <%= link_to t('.new'), new_user_path %></h1>
+<h1 class="title-config"><%=t ".title" %> / <%= link_to(image_tag("novo-32.png", :title => "Cadastrar Novo Usuário"), new_user_path) %></h1>
 
 <table>
   <tr>
@@ -10,14 +10,15 @@
     <% @users.each do |user| %>
     <tr class="<%= cycle("even", "odd") %>">
       <td><%= link_to user.email, user %></td>
+      <td><%= user.name %></td>
       <td>
         <% for role in user.roles %>
           <%= role.name %>
         <% end %>
       </td>
       <td><%= user.company.name %></td>
-      <td><%= link_to image_tag("editar-24.png"), edit_user_path(user) %></td>
-      <td><%= link_to image_tag("apagar-24.png"), user, :confirm => t(:confirm), :method => :delete %></td>
+      <td><%= link_to(image_tag("editar-24.png", :title => "Editar Usuário"), edit_user_path(user)) %></td>
+      <td><%= link_to(image_tag("apagar-24.png", :title => "Excluir Usuário"), user, :confirm => t(:confirm), :method => :delete) %></td>
     </tr>
   <% end %>
 </table>

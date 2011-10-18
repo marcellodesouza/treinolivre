@@ -5,15 +5,12 @@
 </div>
 
 <div class="name-show">
-  <h1><%= @user.email %></h1><br />
+  <h1><%= @user.name %></h1><br />
+    <%= link_to(image_tag("voltar-24.png", :title => "Voltar"), users_path) %>  
+    <% if current_user.role? :Admin %>
+      <%= link_to(image_tag("editar-24.png", :title => "Editar"), edit_user_path) %>
+    <% end %>
 
-  <p><%= @user.company.name %></p><br /><br />
+  <br /><p><%= @user.company.name %></p><br /><br />
 
-  <% if cannot? :manage, :all %>
-    <%= link_to t(:edit), edit_user_path(@user) %> |
-    <%= link_to t(:back), courses_path %>
-  <% else %>
-    <%= link_to t(:edit), edit_user_path(@user) %> |
-    <%= link_to t(:back), users_path %>
-  <% end %>
 </div>

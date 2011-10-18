@@ -1,4 +1,4 @@
-<h1 class="title-config"><%=t ".title" %> / <%= link_to t('.new'), new_category_path %></h1>
+<h1 class="title-config"><%=t ".title" %> / <%= link_to(image_tag("novo-32.png", :title => "Cadastrar Novo Usuário"), new_category_path) %></h1>
 
 <table>
   <tr>
@@ -9,8 +9,8 @@
 <% @categories.each do |category|  %>
   <tr class ="<%= cycle("even", "odd") %>">
     <td class="td-title"><%= category.name %></td>
-    <td><%= link_to t(:edit), edit_category_path(category) %></td>
-    <td><%= link_to t(:destroy), category, :confirm => t(:confirm), :method => :delete %></td>
+      <td><%= link_to(image_tag("editar-24.png", :title => "Editar Categoria"), edit_category_path(category)) %></td>
+      <td><%= link_to(image_tag("apagar-24.png", :title => "Excluir Categoria"), category, :confirm => t(:confirm), :method => :delete) %></td>
   </tr>
 <% end %>
 </table>

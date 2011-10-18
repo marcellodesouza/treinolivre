@@ -1,5 +1,4 @@
-<h1 class="title-config"><%=t ".title" %> / <%= link_to t('.new'), new_role_path %></h1>
-
+<h1 class="title-config"><%=t ".title" %> / <%= link_to(image_tag("novo-32.png", :title => "Cadastrar Nova Permissão"), new_role_path) %></h1>
 <table>
   <tr>
     <th></th>
@@ -9,8 +8,8 @@
 <% @roles.each do |role| %>
   <tr class ="<%= cycle("even", "odd") %>">
     <td class="td-title"><%= role.name %></td>
-    <td><%= link_to t(:edit), edit_role_path(role) %></td>
-    <td><%= link_to t(:destroy), role, :confirm => t(:confirm), :method => :delete %></td>
+      <td><%= link_to(image_tag("editar-24.png", :title => "Editar Permissão"), edit_role_path(role)) %></td>
+      <td><%= link_to(image_tag("apagar-24.png", :title => "Permissão"), role, :confirm => t(:confirm), :method => :delete) %></td>
   </tr>
 <% end %>
 </table>

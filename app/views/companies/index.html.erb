@@ -1,6 +1,6 @@
 <h1 class="title-config"><%=t ".title" %>
   <% if can? :manage, :all %>
-    / <%= link_to t('.new'), new_company_path %>
+    / <%= link_to(image_tag("novo-32.png", :title => "Cadastrar Novo Usuário"), new_company_path) %>
   <% end %>
 </h1>
 
@@ -15,9 +15,9 @@
     <td><%= company.state %></td>
     <td><%= company.contractor %></td>
     <td><%= company.phone %></td>
-    <td><%= link_to t(:edit), edit_company_path(company) %></td>
+      <td><%= link_to(image_tag("editar-24.png", :title => "Editar Empresa"), edit_company_path(company)) %></td>
     <% if can? :manage, :all %>
-      <td><%= link_to t(:destroy), company, :confirm => t(:confirm), :method => :delete %></td>
+      <td><%= link_to(image_tag("apagar-24.png", :title => "Excluir Empresa"), company, :confirm => t(:confirm), :method => :delete) %></td>
     <% end %>
   </tr>
 <% end %>

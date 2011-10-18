@@ -6,7 +6,7 @@
 
 <div class="name-show">
   <h1><%= @lesson.theme %></h1><br />
-  <%= link_to t(:back), course_path(@course) %>
+  <%= link_to(image_tag("voltar-24.png", :title => "Voltar"), course_path(@course)) %>  
 </div>
 
 <div class="content-show">

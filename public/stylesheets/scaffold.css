@@ -28,7 +28,7 @@ div.field, div.actions {
 input, select, textarea{
   padding: 5px;
   border: 1px solid #214478;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #notice {

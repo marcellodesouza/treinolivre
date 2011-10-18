@@ -6,12 +6,15 @@ class Ability
 
     if user.role? :Admin
       can :manage, :all 
+      cannot :destroy, User, :id => user.id
     end
     if user.role? :Aluno
       can :read, Course 
       can :read, User, :id => user.id #a ordem das actions importa no controle das views
       cannot :index, User
       can :update, User, :id => user.id
+      can :read, User, :id => user.id
+      cannot :destroy, User, :id => user.id
     end
     if user.role? :Gestor
       can :read, Course

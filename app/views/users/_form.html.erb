@@ -12,7 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :email, :placeholder => "Nome do Usuário", :size => 50 %>
+    <%= f.text_field :name, :placeholder => "Nome Completo", :size => 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email, :placeholder => "E-mail", :size => 50 %>
   </div>
 
   <% if can? :manage, :all %>
@@ -54,6 +58,6 @@
   <% end %>
     
   <div class="actions">
-    <%= f.submit %>
+    <br /><%= f.submit %>
   </div>
 <% end %>
