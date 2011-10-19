@@ -7,7 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="content">
+  <div id="bar">
+     <div id="info-course">
+      <h5>Tema:</h5>
+      <p><%= @activity.lesson.theme %></p>
+     </div>
+  </div>
+  <div id="content-class">
     <%= yield %>
   </div>
 </body>

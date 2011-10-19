@@ -1,4 +1,4 @@
-   <% if can? :manage, :all %>
+   <% if current_user.role? :Admin %>
     <div id="menu_bar">
       <div id="admin_menu">
         <%= link_to "Usuários", User %> |
@@ -11,12 +11,21 @@
       </div>
     </div>
    <% end %>
+
    <% if current_user.role? :Gestor %>
     <div id="menu_bar">
       <div id="admin_menu">
         <%= link_to "Usuários", User %> |
         <%= link_to "Cursos", Course %> |
         <%= link_to "Empresas", Company %> | 
+      </div>
+    </div>
+  <% end %>
+
+   <% if current_user.role? :Orientador %>
+    <div id="menu_bar">
+      <div id="admin_menu">
+        <%= link_to "Usuários", User %> 
       </div>
     </div>
    <% end %>

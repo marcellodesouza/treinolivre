@@ -1,4 +1,5 @@
 <%= form_for(@user) do |f| %>
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -29,15 +30,27 @@
     </div>
   <% end %> 
 
-  <% #if @current_method == "new" %>
+  <% if @current_method == "new" %>
     <div class="field">
       <%= f.password_field :password, :placeholder => "Digite sua Senha", :size => 50 %>
     </div>
     <div class="field">
       <%= f.password_field :password_confirmation, :placeholder => "Confirme sua Senha", :size => 50 %>
     </div>
-  <% #end %>
-  <% if can? :manage, :all %>
+  <% end %>
+  
+  <% if @current_method == "edit" %>
+    <% if @user.id == current_user.id or current_user.role? :Admin #if @current_method == "new" %>
+      <div class="field">
+        <%= f.password_field :password, :placeholder => "Digite sua Senha", :size => 50 %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password_confirmation, :placeholder => "Confirme sua Senha", :size => 50 %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if current_user.role? :Admin %>
     <% for role in Role.find(:all) %>
       <div>
         <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
@@ -45,19 +58,32 @@
       </div>
     <% end %>
   <% end %>
-  <% if current_user.role? :Gestor %>
+
+  <% if current_user.role? :Gestor and @user.id == current_user.id %>
     <div>
-      <%= check_box_tag "user[role_ids][]", "2" %>Aluno<br />
-      <%= check_box_tag "user[role_ids][]", "4" %>Orientador
+      <%= check_box_tag "user[role_ids][]", "3", true %> Gestor<br />
     </div>
+  <% else %>
+    <% if current_user.role? :Gestor %>
+        <%= check_box_tag "user[role_ids][]", "2" %> Aluno<br />
+        <%= check_box_tag "user[role_ids][]", "4" %> Orientador
+    <% end %>
   <% end %>
-  <% if current_user.role? :Orientador %>
+
+  <% if current_user.role? :Orientador and @user.id == current_user.id %>
     <div>
-      <%= check_box_tag "user[role_ids][]", "2", true %> Aluno<br />
+      <%= check_box_tag "user[role_ids][]", "4", true %> Orientador<br />
     </div>
+  <% else %>
+    <% if current_user.role? :Orientador %>
+      <div>
+        <%= check_box_tag "user[role_ids][]", "2", true %> Aluno<br />
+      </div>
+    <% end %>
   <% end %>
     
   <div class="actions">
     <br /><%= f.submit %>
   </div>
+
 <% end %>

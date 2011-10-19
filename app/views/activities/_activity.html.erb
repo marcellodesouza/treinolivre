@@ -1,5 +1,7 @@
   <tr class="<%= cycle("even", "odd") %>" >
     <td><%= link_to activity.name, lesson_activity_path(@lesson, activity), :target => "_blank" %></td>
+  <% if can? :manage, :all %>
     <td><%= link_to t(:edit), edit_lesson_activity_path(@lesson, activity) %></td>
     <td><%= link_to t(:destroy), [activity.lesson, activity], :confirm => t(:confirm), :method => :delete %></td>
+  <% end %>
   </tr>

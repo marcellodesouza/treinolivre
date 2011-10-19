@@ -8,8 +8,8 @@
       </div>
       <div id="user_info">
         <% if user_signed_in? %>
-          <p>Olá, <%= current_user.email %><br />
-          Seu último acesso foi em:<%= current_user.last_sign_in_at.strftime("%d/%m/%y") %></p>
+          <p>Olá, <strong><%= link_to current_user.name, @current_user %></strong> | <%= link_to "Editar Perfil", edit_user_path(current_user) %><br />
+          Seu último acesso foi em: <strong><%= current_user.last_sign_in_at.strftime("%d/%m/%y") %></strong></p>
         <% end %>
       </div>
       <div id="user_menu">

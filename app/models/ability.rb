@@ -8,14 +8,17 @@ class Ability
       can :manage, :all 
       cannot :destroy, User, :id => user.id
     end
+
     if user.role? :Aluno
       can :read, Course 
       can :read, User, :id => user.id #a ordem das actions importa no controle das views
-      cannot :index, User
+      #cannot :index, User
       can :update, User, :id => user.id
       can :read, User, :id => user.id
       cannot :destroy, User, :id => user.id
+      cannot :index, User #para negar a index ela deve ser a última
     end
+
     if user.role? :Gestor
       can :read, Course
       can :read, Activity
@@ -29,10 +32,15 @@ class Ability
       can :manage, User, :company_id => user.company_id
       cannot :destroy, User, :id => user.id
     end
+
     if user.role? :Orientador
       can :create, User
+      can :read, User, :company_id => user.company_id
+      can :update, User, :id => user.id
+      cannot :destroy, User, :id => user.id
       can :read, Course
     end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
