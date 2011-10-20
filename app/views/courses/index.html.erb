@@ -2,7 +2,6 @@
 
   <% if can? :manage, :all %>
     / <%= link_to( image_tag("novo-32.png", :title => "Criar Novo Curso"), new_course_path) %>
-    / <%= link_to( image_tag("novo-32.png", :mouseover => "editar-24.png"), new_course_path) %>
   <% end %>
 
 </h1>
@@ -11,8 +10,8 @@
   <%= div_for(course, :class => "list-courses") do %>
     <%= link_to image_tag(course.avatar.url), course %><br />
     <% if can? :manage, :all %>
-      <%= link_to t(:edit), edit_course_path(course) %>
-      <%= link_to t(:destroy), course, :confirm => t(:confirm), :method => :delete %>
+      <%= link_to(image_tag("editar-24.png", :title => "Editar Curso"), edit_course_path(course)) %>
+      <%= link_to(image_tag("apagar-24.png", :title => "Excluir Curso"), course, :confirm => t(:confirm), :method => :delete) %>
     <% end %>
   <% end %>
 <% end %>
