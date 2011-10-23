@@ -6,11 +6,22 @@
 
 <div class="name-show">
   <h1><%= @company.name %></h1><br />
+  <% if current_user.role? :Gestor %>
+  <%= link_to(image_tag("editar-24.png", :title => "Editar"), edit_company_path(@company)) %>
+  <% else %>
   <%= link_to(image_tag("voltar-24.png", :title => "Voltar"), companies_path) %>  
   <%= link_to(image_tag("editar-24.png", :title => "Editar"), edit_company_path(@company)) %>
+  <% end %>
 </div>
 
 <div class="content-show">
+
+  <%= @company.address %>
+
+
+
+
+
   <table>
     <tr>
       <td class="td-title-company">Contractor</td><td><%= @company.contractor %></td>

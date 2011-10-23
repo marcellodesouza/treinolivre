@@ -29,6 +29,7 @@ class Ability
       #can :create, User
       #can :manage, User, :id => user.id
       cannot :destroy, Company 
+      cannot :index, Company
       can :manage, User, :company_id => user.company_id
       cannot :destroy, User, :id => user.id
     end

@@ -1,7 +1,13 @@
 <h1 class="title-config"><%= t ".title" %>
 
   <% if can? :manage, :all %>
-    / <%= link_to( image_tag("novo-32.png", :title => "Criar Novo Curso"), new_course_path) %>
+
+
+     / <%= link_to  new_course_path do %>
+        <%= image_tag("novo-32.png", :title => "Criar Novo Curso") %>
+        <span class="text-link">Criar Novo Curso</span>
+      <% end %>
+
   <% end %>
 
 </h1>

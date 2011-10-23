@@ -133,8 +133,21 @@ input, select, textarea{
 
 #admin_menu{
   width: 960px;
-  height: 28px;
+  height: 17px;
   margin: 0 auto;
+}
+
+#admin_menu a{
+  padding-left: 33px;
+  padding-right: 34px;
+  color: #ccc;
+  font-weight: bold;
+
+}
+
+#admin_menu a:hover{
+  background-color: #ccc;
+  color: #000;
 }
 
 #footer{
@@ -279,4 +292,8 @@ td{
   min-height: 410px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
+}
+
+.text-link{
+  font-size: 13px;
 }

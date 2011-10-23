@@ -1,6 +1,6 @@
 <h1 class="title-form"><%=t ".title" %></h1>
 
-<%= link_to t(:back), course_lesson_path(@lesson.course, @lesson), :class => "back-link" %><br /><br />
+<%= link_to(image_tag("voltar-24.png", :title => "Voltar"), course_lesson_path(@lesson.course, @lesson), :class => "back-link") %><br /><br />
 
 <%= render 'form', :lesson => @lesson, :activity => @activity %>
 

@@ -1,6 +1,9 @@
 <h1 class="title-config"><%=t ".title" %>
   <% if can? :manage, :all %>
-    / <%= link_to(image_tag("novo-32.png", :title => "Cadastrar Novo Usuário"), new_company_path) %>
+    / <%= link_to  new_company_path do %>
+        <%= image_tag("novo-32.png", :title => "Criar Nova Empresa") %>
+        <span class="text-link">Criar Nova Empresa</span>
+      <% end %>
   <% end %>
 </h1>
 
