@@ -3,12 +3,14 @@
   padding: 0;
   text-decoration: none;
 }
-body { background-color: #fff; color: #333; }
+
+html,body { background-color: #fff; color: #333; height: 100%; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   15px;
   line-height: 18px;
+  height: 100%;
 }
 
 pre {
@@ -91,7 +93,7 @@ input, select, textarea{
 }
 
 #user_image{
-  margin-left: 110px;
+  margin-left: 50px;
 }
 
 #user_info, #user_menu{
@@ -112,17 +114,33 @@ input, select, textarea{
   margin-left: 20px;
 }
 
+#user_info a{
+  font-size: 12px;
+}
+
 /* Menu Admin */
 #user_menu{
   margin-left: 50px;
 }
 
 /* internas Gerais */
+#geral{
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  position: relative;
+}
+
+#clear{
+  clear: both;
+}
+
 #content{
   width: 960px;
+  min-height: 100%;
   margin: 0 auto;
-  min-height: 410px;
   margin-bottom: 10px;
+  padding-bottom: 130px;
 }
 
 #menu_bar{
@@ -138,9 +156,9 @@ input, select, textarea{
 }
 
 #admin_menu a{
-  padding-left: 33px;
-  padding-right: 34px;
-  color: #ccc;
+  padding-left: 30px;
+  padding-right: 20px;
+  color: #000;
   font-weight: bold;
 
 }
@@ -156,6 +174,8 @@ input, select, textarea{
   height: 120px;
   background: url(../images/fundo-rodape.png) repeat-x;
   border-top: 1px solid #ccc;
+  bottom: 0;
+  position: absolute;
 }
 
 #footer_content{
@@ -170,7 +190,7 @@ input, select, textarea{
 .list-courses{
   width: 160px;
   float: left;
-  margin: 30px 50px 10px 10px;
+  margin: 20px 50px 10px 10px;
 }
 
 .title-config{ /*Configuração dos títulos das listagens*/
@@ -211,7 +231,6 @@ form{
 
 .logo-show, .name-show{
   float: left;
-  height: 130px;
   margin: 10px 0 10px 0;
 }
 
@@ -297,3 +316,5 @@ td{
 .text-link{
   font-size: 13px;
 }
+
+

@@ -7,9 +7,8 @@
 <div class="name-show">
   <h1 class="title-page"><%= @course.name %></h1>
   <p><%= @course.category.name %></p>
-  <br /><%= link_to(image_tag("voltar-24.png", :title => "Voltar"), courses_path) %>  
+  <%= link_to(image_tag("voltar-24.png", :title => "Voltar"), courses_path) %>
 </div>
-
 <div id="description-course">
   <p>
     <%= @course.description %>
