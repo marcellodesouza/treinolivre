@@ -1,13 +1,14 @@
    <% if current_user.role? :Admin %>
     <div id="menu_bar">
       <div id="admin_menu">
-        <%= link_to "Usuários", User %> 
-        <%= link_to "Categorias", Category %> 
-        <%= link_to "Cursos", Course %> 
-        <%= link_to "Empresas", Company %>  
-        <%= link_to "Permissões", Role %> 
-        <%= link_to "Mídias", Kind %>  
-        <%= link_to "Anotações", Note %>  
+        <strong>Menu Admin > </strong>
+        <%= link_to "Usuários", User %> |
+        <%= link_to "Categorias", Category %> |
+        <%= link_to "Cursos", Course %> |
+        <%= link_to "Empresas", Company %> |
+        <%= link_to "Permissões", Role %> | 
+        <%= link_to "Mídias", Kind %> |  
+        <%= link_to "Anotações", Note %>   
       </div>
     </div>
    <% end %>
@@ -15,9 +16,10 @@
    <% if current_user.role? :Gestor %>
     <div id="menu_bar">
       <div id="admin_menu">
+        <strong>Menu Gestor > </strong>
         <%= link_to "Usuários", User %> |
         <%= link_to "Cursos", Course %> |
-        <%= link_to "Empresas", current_user.company %> | 
+        <%= link_to "Empresas", current_user.company %>  
       </div>
     </div>
   <% end %>
@@ -25,6 +27,7 @@
    <% if current_user.role? :Orientador %>
     <div id="menu_bar">
       <div id="admin_menu">
+        <strong>Menu Orientador > </strong>
         <%= link_to "Usuários", User %> 
       </div>
     </div>
